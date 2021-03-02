@@ -49,10 +49,19 @@ a {
 }
 
 ul {
-    list-style: none;
     padding-left: 0;
 }
 
+li {
+    list-style: none;
+}
+
+button {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
 
 /* Typography */
 
@@ -84,11 +93,13 @@ p {
     margin: 4px 0;
 }
 
+
+
 /* Navbar */
 #navbar {
     display:flex;
     justify-content:space-between;
-    background-color: #73aace;
+    background:url("images/navbar\ backgound.JPG") center/cover; 
     align-items: center;
     color: var(--color-white);
     padding: 16px;
@@ -117,4 +128,33 @@ p {
 
 .navbar__menu__item:hover {
     background-color: var(--color-lightblue);
+}
+
+/* Home */
+#home {
+    background:url("images/background.JPG") center/cover; 
+    padding: 40px;
+    text-align: center;
+}
+
+.home_avatar {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid var(--color-light-white);
+}
+
+.home_title,
+.home_description {
+    color: var(--color-white);
+}
+
+.home_contact {
+    color:white;
+    font-size: var(--font-regular);
+    font-weight: var(--weight-bold);
+    margin: 24px;
+    padding: 8px 12px;
+    border: 2px solid var(--color-white);
+    border-radius: var(--size-border-radius);
 }
