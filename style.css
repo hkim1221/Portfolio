@@ -15,6 +15,7 @@
     --color-yellow: #fff7d1;
     --color-orange: #feb546;
     --color-black: #000000;
+    --color-darknavy: #002b66;
 
 /* Font size */
     --font-large: 48px;
@@ -99,12 +100,21 @@ p {
 
 /* Navbar */
 #navbar {
+    position: fixed;
     display:flex;
     justify-content:space-between;
-    background:url("images/navbar\ backgound.JPG") center/cover; 
+    width: 100%;
+    /* background:url("images/navbar\ backgound.JPG") center/cover;  */
     align-items: center;
-    color: var(--color-white);
     padding: 16px;
+    background-color: transparent;
+    color: white;
+    transition: all var(--animation-duration) ease-in-out;
+}
+
+#navbar.navbar--dark {
+    background-color: var(--color-darknavy);
+    padding: 5px;
 }
 
 .navbar__menu {
@@ -115,6 +125,7 @@ p {
 .navbar__logo {
     font-size: var(--font-medium);
     font-weight: var(--weight-semi-bold);
+    color: white;
 }
 
 .navbar__menu__item {
@@ -146,6 +157,7 @@ p {
 #home {
     background:url("images/background.JPG") center/cover; 
     padding: 40px;
+    padding-top: 120px;
     text-align: center;
 }
 
