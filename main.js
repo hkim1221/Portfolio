@@ -33,16 +33,27 @@ homeContactBtn.addEventListener('click', () => {
 
 });
 
-//Make home slowly fade out 
+//Make home slowly fade out //
 const home = document.querySelector('.home_container');
 const homeHeight = home.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
     home.style.opacity = 1 - window.scrollY / homeHeight;
 });
 
+//show arrow up button when scrolling down//
+const arrowup = document.querySelector('.arrow-up');
+document.addEventListener('scroll', () => {
+    if (window.scrollY > homeHeight / 2) {
+        arrowup.classList.add('visible');
+    }else {
+        arrowup.classList.remove('visible');
+    }
+});
 
-
-
+//click on arrow up button go Home//
+arrowup.addEventListener('click', () => {
+    scrollIntoView('#home');
+});
 
 
 
