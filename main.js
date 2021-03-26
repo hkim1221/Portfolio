@@ -67,6 +67,13 @@ workBtnContainer.addEventListener ('click', (e) => {
     if (filter == null) {
         return;
     }
+
+    //remove selection from previous to next//
+    const active = document.querySelector('.category_btn.selected');
+    active.classList.remove('selected');
+    const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+    target.classList.add('selected');
+
     projectContainer.classList.add('anim-out');
     setTimeout(() => {
         projects.forEach((project) => {
