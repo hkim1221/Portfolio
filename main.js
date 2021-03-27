@@ -13,16 +13,20 @@ document.addEventListener('scroll', () => {
 });
 
 //scrolling when tap navbar menu//
-
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (event) => {
-    console.log(event.target.dataset.link);
     const target = event.target;
     const link = target.dataset.link;
     if (link ==null) {
         return;
     }
     scrollIntoView(link);
+});
+
+// Navbar toggle button for small screen//
+const navbarToggleBtn = document.querySelector('.navbar_toggle-btn')
+navbarToggleBtn.addEventListener('click', () => {
+    navbarMenu.classList.toggle('open');
 });
 
 
@@ -77,7 +81,6 @@ workBtnContainer.addEventListener ('click', (e) => {
     projectContainer.classList.add('anim-out');
     setTimeout(() => {
         projects.forEach((project) => {
-            console.log(project.dataset.type);
             if (filter === '*' || filter === project.dataset.type){
                 project.classList.remove('invisible');
             } else {
